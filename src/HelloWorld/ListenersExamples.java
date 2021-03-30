@@ -25,12 +25,12 @@ public class ListenersExamples extends Application {
     private Parent createInterface() {
         Button b = new Button("Кнопка");
         Label label = new Label("Не трогай, пожалуйста, кнопку");
-        VBox hb = new VBox();
-        hb.getChildren()
+        VBox vb = new VBox();
+        vb.getChildren()
                 .addAll(label, b);
         b.setStyle("-fx-background-color: red; -fx-max-width:200; -fx-max-height: 80 ");
         label.setTextFill(Color.web("#0076a3"));
-        hb.setAlignment(Pos.CENTER);
+        vb.setAlignment(Pos.CENTER);
 
         // я хотела сделать обработчик именно с помощью addEventHandler, но он упрямо не хотел взаимодействовать с обычной переменной count
         // тогда я приняла предложение идее сделать анонимный объект. Подскажите, пожалуйста, как это можно сделать красивее?
@@ -44,10 +44,10 @@ public class ListenersExamples extends Application {
 
             if (counter.count == 4) {
                 ImageView a = new ImageView(new Image("file:res/cat1.jpg"));
-                hb.getChildren().clear();
-                hb.getChildren().add(a);
+                vb.getChildren().clear();
+                vb.getChildren().add(a);
             } else label.setText(phrases[counter.count]);
         });
-        return hb;
+        return vb;
     }
 }
