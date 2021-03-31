@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class MessengerBox extends Application {
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Домашка про кнопку");
+        primaryStage.setTitle("Домашка про мессенджер");
         Parent ui = createInterface();
         primaryStage.setScene(new Scene(ui, 640, 240));
         primaryStage.show();
