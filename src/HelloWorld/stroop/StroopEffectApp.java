@@ -27,7 +27,7 @@ public class StroopEffectApp extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Stroop Effect");
         Parent ui = createInterface();
-        primaryStage.setScene(new Scene(ui, 400, 350));
+        primaryStage.setScene(new Scene(ui, 400, 400));
         primaryStage.show();
     }
 
@@ -54,13 +54,15 @@ public class StroopEffectApp extends Application {
 
 
         Button b = new Button("Добавить");
-        Button b1 = new Button("Добавить");
+        //Button b1 = new Button("Добавить");
         //VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4, b1);
         VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4);
+        //VBox vb2 = new VBox(b1);
 
         vb1.setAlignment(Pos.BASELINE_CENTER);
         HBox app = new HBox(vb1, b);
-        app.setPrefHeight(350);
+
+        b.setMinWidth(100);
         HBox.setHgrow(vb1, Priority.ALWAYS);
 
       //  Random rand = new Random();
