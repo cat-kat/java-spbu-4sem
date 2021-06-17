@@ -27,14 +27,14 @@ public class StroopEffectApp extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Stroop Effect");
         Parent ui = createInterface();
-        primaryStage.setScene(new Scene(ui, 400, 400));
+        primaryStage.setScene(new Scene(ui, 400, 300));
         primaryStage.show();
     }
 
 
 
     private Parent createInterface() {
-        Label l1 = new Label("Красный");
+       /* Label l1 = new Label("Красный");
         Label l2 = new Label("Cиний");
         Label l3 = new Label("Фиолетовый");
         Label l4 = new Label("Жёлтый");
@@ -50,13 +50,20 @@ public class StroopEffectApp extends Application {
         l3.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR , 30));
         l3.setTextFill(web("#ffcc00"));
         l4.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR , 30));
-        l4.setTextFill(web("#11ff00"));
+        l4.setTextFill(web("#11ff00")); */
 
+        String[] colors = {"#FE2712", "#FB9902", "#FEFE33", "#66B032", "#347C98", "#0247FE", "#4424D6", "#000000"};
+        String[] colorsName = {"Красный", "Оранжевый", "Желтый", "Зелёный", "Голубой", "Синий", "Фиолетовый", "Черный"};
+        StroopFactory a = new StroopFactory(colors, colorsName);
 
         Button b = new Button("Добавить");
+       // VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4);
+        VBox vb1 = new VBox(20);
         //Button b1 = new Button("Добавить");
         //VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4, b1);
-        VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4);
+        for (int i=0; i<6; i++) {
+            vb1.getChildren().add(a.randElem());
+        }
         //VBox vb2 = new VBox(b1);
 
         vb1.setAlignment(Pos.BASELINE_CENTER);
@@ -66,11 +73,9 @@ public class StroopEffectApp extends Application {
         HBox.setHgrow(vb1, Priority.ALWAYS);
 
       //  Random rand = new Random();
-        String[] colors = {"#FE2712", "#FB9902", "#FEFE33", "#66B032", "#347C98", "#0247FE", "#4424D6", "#000000"};
-        String[] colorsName = {"Красный", "Оранжевый", "Желтый", "Зелёный", "Голубой", "Синий", "Фиолетовый", "Черный"};
 
         b.setOnAction(actionEvent -> {
-            StroopFactory a = new StroopFactory(colors, colorsName);
+
             if (vb1.getChildren().size() == 10) {
                 vb1.getChildren().remove(0);
             }
