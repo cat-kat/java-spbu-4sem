@@ -32,7 +32,6 @@ public class StroopEffectApp extends Application {
     }
 
 
-
     private Parent createInterface() {
        /* Label l1 = new Label("Красный");
         Label l2 = new Label("Cиний");
@@ -57,13 +56,14 @@ public class StroopEffectApp extends Application {
         StroopFactory a = new StroopFactory(colors, colorsName);
 
         Button b = new Button("Добавить");
-       // VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4);
+        // VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4);
         VBox vb1 = new VBox(20);
         //Button b1 = new Button("Добавить");
         //VBox vb1 = new VBox(20, l1, r1, l2, l3, r2, l4, b1);
-        for (int i=0; i<6; i++) {
+        for (int i = 0; i < 6; i++) {
             vb1.getChildren().add(a.randElem());
         }
+        //vb1.getChildren().add(b1);
         //VBox vb2 = new VBox(b1);
 
         vb1.setAlignment(Pos.BASELINE_CENTER);
@@ -72,10 +72,9 @@ public class StroopEffectApp extends Application {
         b.setMinWidth(100);
         HBox.setHgrow(vb1, Priority.ALWAYS);
 
-      //  Random rand = new Random();
+        //  Random rand = new Random();
 
         b.setOnAction(actionEvent -> {
-
             if (vb1.getChildren().size() == 10) {
                 vb1.getChildren().remove(0);
             }
